@@ -1,7 +1,7 @@
 {
   "name": "type-of",
   "version": "1.0.0",
-  "description": "get types",
+  "description": "get all the types",
   "main": "./dist/index.js",
   "scripts": {
     "test": "jest",

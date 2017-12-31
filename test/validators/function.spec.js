@@ -29,12 +29,12 @@ describe('function validator', () => {
     expect(functionValidator.class()).toBe(false);
   });
 
-  it.skip('check async', () => {
+  it('check async', () => {
     /* Works only with true async functions */
 
-    expect(functionValidator.async(async () => 3)).toBe(true);
+    // expect(functionValidator.async(async () => 3)).toBe(true);
 
-    expect(functionValidator.async(class {})).toBe(true);
+    expect(functionValidator.async(class {})).toBe(false);
     expect(functionValidator.async(() => 3)).toBe(false);
     expect(functionValidator.async(function() {})).toBe(false);
     expect(functionValidator.async(function*() {})).toBe(false);

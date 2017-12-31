@@ -3,7 +3,8 @@ export const iteratorValidator = {
   iterable(value) { return isIterable(value); }
 };
 
-const isIterable = value => !!value && !isIterator(value) && !!value[Symbol.iterator];
-const isIterator = value => !!value && value.constructor === Iterator;
+let Iterator = function*() {}().constructor;
 
-const Iterator = (function*() {})().constructor;
+const isIterable = value => !!value && !isIterator(value) && typeof Symbol !== 'undefined' && !!value[Symbol.iterator];
+const isIterator = value => !!Iterator && value instanceof Iterator;
+
