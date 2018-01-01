@@ -1,6 +1,6 @@
-## typeOf
+# typeOf
 
-# Basic Usage
+## Basic Usage
 ```typescript
 import { typeOf } from 'type-of';
 
