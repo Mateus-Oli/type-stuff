@@ -28,32 +28,4 @@ describe('function validator', () => {
     expect(functionValidator.class({})).toBe(false);
     expect(functionValidator.class()).toBe(false);
   });
-
-  it('check async', () => {
-    /* Works only with true async functions */
-
-    // expect(functionValidator.async(async () => 3)).toBe(true);
-
-    expect(functionValidator.async(class {})).toBe(false);
-    expect(functionValidator.async(() => 3)).toBe(false);
-    expect(functionValidator.async(function() {})).toBe(false);
-    expect(functionValidator.async(function*() {})).toBe(false);
-
-    expect(functionValidator.async({})).toBe(false);
-    expect(functionValidator.async()).toBe(false);
-  });
-
-
-  it('check generator', () => {
-
-    expect(functionValidator.generator(function*() {})).toBe(true);
-
-    expect(functionValidator.generator(class {})).toBe(false);
-    expect(functionValidator.generator(() => 3)).toBe(false);
-    expect(functionValidator.generator(async () => 3)).toBe(false);
-    expect(functionValidator.generator(function() {})).toBe(false);
-
-    expect(functionValidator.generator({})).toBe(false);
-    expect(functionValidator.generator()).toBe(false);
-  });
 });
