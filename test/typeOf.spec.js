@@ -19,8 +19,8 @@ describe('typeOf', () => {
   it('get null and undefined default types', () => {
     const typeOf = typeOfFactory();
 
-    expect(typeOf()).toBe('undefined');
-    expect(typeOf(null)).toBe('null');
+    expect(typeOf()).toBe('unknown');
+    expect(typeOf(null)).toBe('unknown');
   });
 
   it('get null and undefined updated types', () => {
@@ -39,7 +39,7 @@ describe('typeOf', () => {
     expect(typeOf({})).toBe('unknown');
   });
 
-  it('returns symbol type or symbol type return', () => {
+  it('get type from typeOf symbol', () => {
     const typeOf = typeOfFactory();
 
     const valueType = {
@@ -51,6 +51,20 @@ describe('typeOf', () => {
 
     expect(typeOf(valueType)).toBe('asValue');
     expect(typeOf(functionType)).toBe('asFunction');
+    expect(typeOfFactory()(valueType)).toBe('unknown');
+  });
+
+  it('get type from typeOfFactory symbol', () => {
+
+    const valueType = {
+      [typeOfFactory.type]: 'asValue'
+    };
+    const functionType = {
+      [typeOfFactory.type]() { return  'asFunction'; }
+    };
+
+    expect(typeOfFactory()(valueType)).toBe('asValue');
+    expect(typeOfFactory()(functionType)).toBe('asFunction');
   });
 
   it('executes validators with right parameters', () => {
@@ -110,5 +124,24 @@ describe('typeOf', () => {
     });
 
     expect(typeOf(11)).toBe('validator');
+  });
+
+  it('validate first typeOf symbol then typeOfFactory symbol then validator', () => {
+    const typeOf = typeOfFactory({
+      validator() { return true; }
+    });
+
+    const value = {
+      [typeOf.type]: 'typeOf',
+      [typeOfFactory.type]: 'typeOfFactory'
+    };
+
+    expect(typeOf(value)).toBe('typeOf');
+
+    delete value[typeOf.type];
+    expect(typeOf(value)).toBe('typeOfFactory');
+
+    delete value[typeOfFactory.type];
+    expect(typeOf(value)).toBe('validator');
   });
 });

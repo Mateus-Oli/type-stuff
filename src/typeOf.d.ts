@@ -9,7 +9,11 @@ export interface TypeOf {
   setNull(type: string): string;
 }
 
-export function typeOfFactory(validators?: Validators): TypeOf;
+export interface typeOfFactory {
+  (validators?: Validators): TypeOf;
+
+  type: symbol;
+}
 
 type Validators = {
   [type: string]: (value: any) => boolean | string;

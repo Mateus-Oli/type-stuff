@@ -1,10 +1,17 @@
+const UNKNOWN = 'unknown';
+
 const EMPTY = {
-  [null]: `${null}`,
-  [undefined]: `${undefined}`
+  [null]: UNKNOWN,
+  [undefined]: UNKNOWN
 };
 
-function getSymbol(typeOf, value = {}) {
-  return typeof value[type] === 'function' ? value[type](typeOf) : value[type];
+function getSymbolReturn(symbol, value, args = []) {
+  return typeof value[symbol] === 'function' ? value[symbol](...args) : value[symbol];
+}
+
+function getTypeSymbol(typeOf, value = {}) {
+  const type = getSymbolReturn(typeOf.type, value, [typeOf]) || getSymbolReturn(typeOfFactory.type, value, [typeOf]);
+  return type && `${type}`;
 }
 function getValidator(validators = [], value, typeOf) {
   for (const [type, validator] of validators) {
@@ -23,16 +30,14 @@ function isEmpty(value) {
   return value === undefined || value === null;
 }
 
-const type = Symbol('type');
-
 export const typeOfFactory = validator => {
 
   const empty = Object.create(EMPTY);
   const validators = [];
 
-  const typeOf = value =>  getEmpty(empty, value) || getSymbol(typeOf, value) || getValidator(validators, value, typeOf) || 'unknown';
+  const typeOf = value =>  getEmpty(empty, value) || getTypeSymbol(typeOf, value) || getValidator(validators, value, typeOf) || UNKNOWN;
 
-  typeOf.type = type;
+  typeOf.type = Symbol('type');
 
   typeOf.validate = (validator = {}) => Object.keys(validator).forEach(i => validators.unshift([i, validator[i]])) || validator;
 
@@ -42,3 +47,5 @@ export const typeOfFactory = validator => {
   typeOf.validate(validator);
   return typeOf;
 };
+
+typeOfFactory.type = Symbol('type');

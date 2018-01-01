@@ -10,6 +10,9 @@ const typeOf = typeOfFactory(Object.assign(
   functionValidator
 ));
 
+typeOf.setNull(null);
+typeOf.setUndefined(undefined);
+
 export { typeOf };
 
 export { typeOfFactory };
