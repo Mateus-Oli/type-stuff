@@ -8,7 +8,7 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     library: 'typeOf',
-    libraryTarget: 'commonjs'
+    libraryTarget: 'commonjs2'
   },
   devtool: 'source-map',
   resolve: {
