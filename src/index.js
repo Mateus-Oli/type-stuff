@@ -2,6 +2,7 @@ import { constructorValidator } from './validators/constructor';
 import { functionValidator } from './validators/function';
 import { typeOfFactory } from "./typeOf";
 import { numberValidator } from './validators/number';
+import { originalValidator } from './validators/original';
 
 const typeOf = typeOfFactory(Object.assign(
   {},
@@ -20,3 +21,4 @@ export { typeOfFactory };
 export { constructorValidator };
 export { functionValidator };
 export { numberValidator };
+export { originalValidator };

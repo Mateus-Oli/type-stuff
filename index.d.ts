@@ -24,7 +24,7 @@ declare module 'type-of' {
   export const typeOfFactory: TypeOfFactory;
 
   export const constructorValidator: {
-    constructor(value: any): boolean;
+    constructor(value: any): string;
   }
   export const functionValidator: {
     lambda(value: any): boolean;
@@ -36,4 +36,7 @@ declare module 'type-of' {
     integer(value: any): boolean;
     infinity(value: any): boolean;
   }
+  export const originalValidator: {
+    original(value: any): string;
+  };
 }
