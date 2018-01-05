@@ -30,7 +30,7 @@ declare module 'type-of' {
     lambda(value: any): boolean;
     class(value: any): boolean;
   }
-  export const constructorValidator: {
+  export const numberValidator: {
     nan(value: any): boolean;
     double(value: any): boolean;
     integer(value: any): boolean;
