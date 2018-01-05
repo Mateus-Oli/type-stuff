@@ -22,4 +22,18 @@ declare module 'type-of' {
 
   export const typeOf: TypeOf;
   export const typeOfFactory: TypeOfFactory;
+
+  export const constructorValidator: {
+    constructor(value: any): boolean;
+  }
+  export const functionValidator: {
+    lambda(value: any): boolean;
+    class(value: any): boolean;
+  }
+  export const constructorValidator: {
+    nan(value: any): boolean;
+    double(value: any): boolean;
+    integer(value: any): boolean;
+    infinity(value: any): boolean;
+  }
 }
