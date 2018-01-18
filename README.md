@@ -73,5 +73,5 @@ import { typeOf, typeOfFactory } from 'type-of';
 
 ## Validators
 ```typescript
-import { constructorValidator, functionValidator, numberValidator, originalValidator } from 'type-of';
+import { constructorValidator, functionValidator, numberValidator, originalValidator, interfaceValidator } from 'type-of';
 ```
