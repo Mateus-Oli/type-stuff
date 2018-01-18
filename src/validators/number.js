@@ -1,11 +1,11 @@
 export const numberValidator = {
-  nan(value) { return Number.isNaN(value); },
+  nan: x => Number.isNaN(x),
 
-  double(value) { return isDouble(value); },
-  integer(value) { return Number.isInteger(value); },
+  double: x => isDouble(x),
+  integer: x => Number.isInteger(x),
 
-  infinite(value) { return isInfinite(value); }
+  infinite: x =>isInfinite(x)
 };
 
-const isDouble = value => typeof value === 'number' && !Number.isNaN(value) && value !== Math.round(value);
-const isInfinite = value => value === Infinity || value === -Infinity;
+const isDouble = x => typeof x === 'number' && !Number.isNaN(x) && x !== Math.round(x);
+const isInfinite = x => x === Infinity || x === -Infinity;

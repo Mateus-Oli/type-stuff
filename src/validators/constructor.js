@@ -1,3 +1,3 @@
 export const constructorValidator = {
-  constructor(value) { return value.constructor.name.replace(/^[A-Z]/, value => value.toLowerCase()); }
+  constructor: x => x.constructor.name.replace(/^[A-Z]/, first => first.toLowerCase())
 };

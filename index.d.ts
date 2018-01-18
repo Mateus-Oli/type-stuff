@@ -39,4 +39,11 @@ declare module 'type-of' {
   export const originalValidator: {
     original(value: any): string;
   };
+  export const interfaceValidator :{
+    monadLike(x: any): boolean,
+    functorLike(x: any): boolean,
+    eventLike(x: any): boolean,
+    promiseLike(x: any): boolean,
+    iterableLike(x: any): boolean
+  };
 }

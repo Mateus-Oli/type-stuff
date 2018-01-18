@@ -1,11 +1,11 @@
 export const functionValidator = {
-  class(value) { return isClass(value); },
-  lambda(value) { return isLambda(value); }
+  class: x => isClass(x),
+  lambda: x => isLambda(x)
 };
 
-const isClass = value => isConstructor(value) && !!value.toString().match(/^class/);
+const isClass = x => isConstructor(x) && !!x.toString().match(/^class/);
 
-const isConstructor = value => isFunction(value) && !!value.prototype;
-const isLambda = value => isFunction(value) && !value.prototype;
+const isConstructor = x => isFunction(x) && !!x.prototype;
+const isLambda = x => isFunction(x) && !x.prototype;
 
-const isFunction = value => typeof value === 'function';
+const isFunction = x => typeof x === 'function';
