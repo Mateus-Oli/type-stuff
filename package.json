@@ -4,8 +4,7 @@
   "description": "get all the types",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "jest --watch",
-    "coverage": "jest --coverage",
+    "test": "jest --coverage --watch",
     "webpack": "webpack --watch",
     "watch": "npm run webpack",
     "start": "node ./dist"

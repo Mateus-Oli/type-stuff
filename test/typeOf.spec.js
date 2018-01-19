@@ -39,6 +39,18 @@ describe('typeOf', () => {
     expect(typeOf({})).toBe('unknown');
   });
 
+  it('executes symbol with typeOf argument', () => {
+    const typeOf = typeOfFactory();
+
+    typeOf({
+      [typeOf.type]: t => expect(t).toBe(typeOf)
+    });
+
+    typeOf({
+      [typeOfFactory.type]: t => expect(t).toBe(typeOf)
+    });
+  });
+
   it('get type from typeOf symbol', () => {
     const typeOf = typeOfFactory();
 

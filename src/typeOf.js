@@ -5,27 +5,34 @@ const EMPTY = {
   [undefined]: UNKNOWN
 };
 
-function getSymbolReturn(symbol, value, args = []) {
+function getSymbolReturn(symbol, value, args) {
   return typeof value[symbol] === 'function' ? value[symbol](...args) : value[symbol];
 }
 
-function getTypeSymbol(typeOf, value = {}) {
+function getTypeSymbol(typeOf, value) {
   const type = getSymbolReturn(typeOf.type, value, [typeOf]) || getSymbolReturn(typeOfFactory.type, value, [typeOf]);
   return type && `${type}`;
 }
-function getValidator(validators = [], value, typeOf) {
-  for (const [type, validator] of validators) {
+
+function getTypeName(validatorName, validatorReturn) {
+  return typeof validatorReturn === 'string' ? validatorReturn : validatorName;
+}
+
+function getValidator(validators, value, typeOf) {
+  for (const [name, validator] of validators) {
     const isType = validator(value, typeOf);
     if (isType) {
-      return typeof isType === 'string' ? isType : type;
+      return getTypeName(name, isType);
     }
   }
 }
+
 function getEmpty(empty, value) {
   if (isEmpty(value)) {
     return empty[value];
   }
 }
+
 function isEmpty(value) {
   return value === undefined || value === null;
 }
