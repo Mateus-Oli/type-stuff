@@ -1,5 +1,8 @@
 # typeOf
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/01aed6fc09351261fa88/maintainability)](https://codeclimate.com/github/Mateus-Oli/ubiquitous-computing-machine/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/01aed6fc09351261fa88/test_coverage)](https://codeclimate.com/github/Mateus-Oli/ubiquitous-computing-machine/test_coverage)
+
 ## Basic Usage
 ```typescript
 import { typeOf } from 'type-of';
