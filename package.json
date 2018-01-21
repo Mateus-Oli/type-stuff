@@ -1,16 +1,17 @@
 {
-  "name": "type-of",
+  "name": "type-stuff",
   "version": "1.0.0",
   "description": "get all the types",
   "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
-    "test": "jest --coverage --watch",
-    "webpack": "webpack --watch",
-    "watch": "npm run webpack",
-    "start": "node ./dist"
+    "test": "jest --coverage",
+    "watch": "webpack --watch",
+    "start": "node ./dist",
+    "prepublish": "webpack"
   },
   "keywords": [
-    "type-of"
+    "typeof"
   ],
   "repository": {
     "type": "git",

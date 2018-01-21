@@ -1,0 +1,15 @@
+# CONFIG
+.editorconfig
+.eslintrc
+.jsbeautifyrc
+.babelrc
+.gitignore
+.travis.yml
+webpack.config.js
+
+# CODE
+src
+test
+
+# TEST
+coverage

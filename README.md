@@ -1,7 +1,14 @@
-# typeOf
+# Type Stuff
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/01aed6fc09351261fa88/maintainability)](https://codeclimate.com/github/Mateus-Oli/ubiquitous-computing-machine/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/01aed6fc09351261fa88/test_coverage)](https://codeclimate.com/github/Mateus-Oli/ubiquitous-computing-machine/test_coverage)
+[![NPM](https://nodei.co/npm/type-stuff.png)](https://nodei.co/npm/type-stuff/)
+
+[![Build Status](https://travis-ci.org/Mateus-Oli/type-stuff.svg?branch=master)](https://travis-ci.org/Mateus-Oli/type-stuff)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e15c4505d289e0b67dc2/maintainability)](https://codeclimate.com/github/Mateus-Oli/type-stuff/maintainability)[![Test Coverage](https://api.codeclimate.com/v1/badges/e15c4505d289e0b67dc2/test_coverage)](https://codeclimate.com/github/Mateus-Oli/type-stuff/test_coverage)
+[![Known Vulnerabilities](https://snyk.io/test/github/mateus-oli/type-stuff/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mateus-oli/type-stuff?targetFile=package.json)
+
+[![dependencies](https://david-dm.org/Mateus-Oli/type-stuff.svg)](https://david-dm.org/Mateus-Oli/type-stuff)
+[![devDependencies](https://david-dm.org/Mateus-Oli/type-stuff/dev-status.svg)](https://david-dm.org/Mateus-Oli/type-stuff)
+[![perrDependencies](https://david-dm.org/Mateus-Oli/type-stuff/peer-status.svg)](https://david-dm.org/Mateus-Oli/type-stuff)
 
 ## Basic Usage
 ```typescript
