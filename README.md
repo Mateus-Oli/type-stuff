@@ -12,7 +12,7 @@
 
 ## Basic Usage
 ```typescript
-import { typeOf } from 'type-of';
+import { typeOf } from 'type-stuff';
 
 class Constructor {}
 
@@ -33,7 +33,7 @@ typeOf(undefined): 'undefined';
 
 ## Change Null and Undefined
 ```typescript
-import { typeOf } from 'type-of';
+import { typeOf } from 'type-stuff';
 
 typeOf.setNull('empty');
 typeOf.setUndefined('empty');
@@ -44,7 +44,7 @@ typeOf(undefined): 'empty';
 
 ## Add Validator
 ```typescript
-import { typeOf } from 'type-of';
+import { typeOf } from 'type-stuff';
 
 class Constructor {};
 
@@ -59,7 +59,7 @@ typeOf([1]): 'integer[]';
 
 ## Create typeOf
 ```typescript
-import { typeOfFactory } from 'type-of';
+import { typeOfFactory } from 'type-stuff';
 
 const typeOf = typeOfFactory({ /* validators */ });
 
@@ -68,7 +68,7 @@ typeOf({}): 'unknown';
 
 ## Set Symbols
 ```typescript
-import { typeOf, typeOfFactory } from 'type-of';
+import { typeOf, typeOfFactory } from 'type-stuff';
 
   const factorySymbol = {
     [typeOfFactory.type]: 'factory'
@@ -83,5 +83,30 @@ import { typeOf, typeOfFactory } from 'type-of';
 
 ## Validators
 ```typescript
-import { constructorValidator, functionValidator, numberValidator, originalValidator, interfaceValidator } from 'type-of';
+import {
+  constructorValidator,
+  functionValidator,
+  numberValidator,
+  originalValidator,
+  interfaceValidator
+} from 'type-stuff';
+
+class Stuff {}
+originalValidator.original(?) === typeof ?;
+
+constructorValidator.constructor(new Stuff): 'stuff';
+
+functionValidator.lambda(() => {}): true;
+functionValidator.class(Stuff): true;
+
+numberValidator.interger(1): true;
+numberValidator.double(.1): true;
+numberValidator.nan(NaN): true;
+numberValidator.infinite(Infinity): true;
+
+interfaceValidator.promiseLike({ then() {} }): true;
+interfaceValidator.iterableLike({ [Symbol.iteratro]() {} }): true;
+interfaceValidator.monadLike({ flatMap() {}, map() {} }): true;
+interfaceValidator.functorLike({ map() {} }): true;
+interfaceValidator.eventLike({ on() {} } || { addEventListener() {} }): true;
 ```

@@ -1,7 +1,7 @@
 export const interfaceValidator = Object.assign({}, {
 
-  monadLike: x => can(x)('map') && can(x)('flatMap'),
   functorLike: x => can(x)('map'),
+  monadLike: x => can(x)('map') && can(x)('flatMap'),
 
   eventLike: x => can(x)('on') || can(x)('addEventListener'),
 

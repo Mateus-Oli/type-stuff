@@ -1,3 +1,6 @@
+# IDE
+.vscode
+
 # CONFIG
 .editorconfig
 .eslintrc
@@ -7,9 +10,10 @@
 .travis.yml
 webpack.config.js
 
+# TEST
+coverage
+
 # CODE
 src
 test
 
-# TEST
-coverage
