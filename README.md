@@ -10,6 +10,11 @@
 [![devDependencies](https://david-dm.org/Mateus-Oli/type-stuff/dev-status.svg)](https://david-dm.org/Mateus-Oli/type-stuff)
 [![perrDependencies](https://david-dm.org/Mateus-Oli/type-stuff/peer-status.svg)](https://david-dm.org/Mateus-Oli/type-stuff)
 
+## Install
+```bash
+$ npm i type-stuff
+```
+
 ## Basic Usage
 ```typescript
 import { typeOf } from 'type-stuff';
